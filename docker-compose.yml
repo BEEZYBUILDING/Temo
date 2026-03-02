@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  db:
+    image: postrgres:15
+    volumes:
+    - postgres_data:/var/lib/postgresql/data/
+    environment:
+    - POSTGRES_DB=temo_db
+    - POSTGRES_USER=temo_admin
+    - POSTGRES_PASSWORD=kwara4000
+    ports:
+    - "5432:5432"
+
+    #the redis service
+    redis:
+      image: redis:7-alpine
+      ports:
+      - "6379:6379"
+
+    volumes:
+      postgres_data:
