@@ -16,14 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+#from health_check.views import MainView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('healthcheck/', include('health_check.urls')),
-    path('users/', include('users.urls')),
-    path('cart/', include('cart.urls')),
-    path('products/', include('products.urls')),
-    path('orders/', include('orders.urls')),
-    path('payments/', include('payments.urls')),
-    path('notifcations/', include('notifications.urls'))
+    #path('healthcheck/', MainView.as_view(), name='health_check'),
+    path('api/users/', include('users.urls')),
+    path('api/cart/', include('cart.urls')),
+    path('api/products/', include('products.urls')),
+    path('api/orders/', include('orders.urls')),
+    path('api/payments/', include('payments.urls')),
+    path('api/notifcations/', include('notifications.urls'))
 ]

@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+from datetime import timedelta
 from decouple import config
 from pathlib import Path
 
@@ -39,11 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'health_check',
-    'health_check.db',  
-    'health_check.cache', 
-    'health_check.storage',
-    'health_check.contrib.migrations',
+    'rest_framework_simplejwt',
+    #'health_check',
+   
+    #apps 
     'users',
     'products',
     'cart',
@@ -143,6 +143,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000"
 ]
 
+LOG_DIR = BASE_DIR / "logs"
+LOG_DIR.mkdir(parents=True, exist_ok=True) # This creates the folder automatically
+
 LOGGING = {
         "version": 1,                       
         "disable_existing_loggers": False,  
@@ -157,7 +160,7 @@ LOGGING = {
         },
     },
     
-        "handlers": {
+    "handlers": {
         "console": {
             "class": "logging.StreamHandler",
             "formatter": "simple",
@@ -171,7 +174,7 @@ LOGGING = {
         },
     },
         
-        "loggers": {
+    "loggers": {
         "django": {
             "handlers": ["console"],
             "level": "INFO",
@@ -200,11 +203,18 @@ LOGGING = {
     },
 }
 
-#trying to write the logging myself
-LOGGING = {
-    "version": 1,
-    
-    "formatters" : ["{timestamp}:{error}"],
-    "handlers": ["console"],
-    "loggers":["temo"]    
+AUTH_USER_MODEL = "users.CustomUser"
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=3),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'AUTH_HEADER_TYPES': ('Bearer',)
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }
