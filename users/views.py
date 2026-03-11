@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from .models import Address
 from .permissions import IsAdmin
-from .serializers import RegisterSerializer, LoginSerializer, AddressSerializer
+from .serializers import RegisterSerializer, LoginSerializer, AddressSerializer, UserProfileSerializer
 from .tokens import CustomRefreshToken
 
 # Create your views here.
@@ -105,5 +105,21 @@ class AddressUpdateDeleteView(APIView):
         except Address.DoesNotExist:
             return Response("Does not exist", status=status.HTTP_404_NOT_FOUND)
         
-        serializer = AddressSerializer(address, data=request.data)
+class UserProfileView(APIView):
+    permission_classes = [IsAuthenticated]
+    
+    def get(self, request):
+        serializer = UserProfileSerializer(request.user) #serializing the the single object(request.user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    def put(self, request):
+        serializer = UserProfileSerializer(request.user, data=request.data)
+        
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+        
         

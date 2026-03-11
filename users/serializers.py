@@ -57,3 +57,13 @@ class AddressSerializer(serializers.ModelSerializer):
         instance.is_default = validated_data.get('is_default', instance.is_default)
         instance.save()
         return instance
+    
+class UserProfileSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(read_only=True)
+    role = serializers.CharField(read_only=True)
+    
+    class Meta:
+        model = CustomUser
+        fields = ['full_name', 'phone_number', 'email', 'role']
+    
+    
