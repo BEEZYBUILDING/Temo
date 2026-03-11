@@ -25,3 +25,17 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     
     def __str__(self):
         return self.email
+    
+class Address(models.Model):
+    user = models.ForeignKey(CustomUser, related_name='address', on_delete=models.CASCADE)
+    full_name = models.CharField(max_length=200)
+    phone = models.CharField(max_length=15)
+    street = models.CharField(max_length=200)
+    city = models.CharField(max_length=20)
+    state = models.CharField(max_length=20)
+    country = models.CharField(max_length=30)
+    postal_code = models.CharField(max_length=10)
+    is_default = models.BooleanField(default=False)
+    
+    
+    
