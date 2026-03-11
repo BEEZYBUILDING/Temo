@@ -3,7 +3,7 @@ from .models import CustomUser, Address
 
 class RegisterSerializer(serializers.ModelSerializer): #for creating users
     password = serializers.CharField(write_only=True, min_length=8)
-        
+        #write_only : field is accepted in the request but never returned in the response
     class Meta:
         model = CustomUser
         fields = ['email','password', 'full_name', 'phone_number']
@@ -66,4 +66,8 @@ class UserProfileSerializer(serializers.ModelSerializer):
         model = CustomUser
         fields = ['full_name', 'phone_number', 'email', 'role']
     
+    
+class ChangePasswordSerializer(serializers.Serializer):
+    current_password = serializers.CharField(write_only=True)
+    new_password = serializers.CharField(write_only=True)
     

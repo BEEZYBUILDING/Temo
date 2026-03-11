@@ -6,7 +6,9 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from .models import Address
 from .permissions import IsAdmin
-from .serializers import RegisterSerializer, LoginSerializer, AddressSerializer, UserProfileSerializer
+from .serializers import (RegisterSerializer, LoginSerializer, 
+                          AddressSerializer, UserProfileSerializer,
+                          ChangePasswordSerializer)
 from .tokens import CustomRefreshToken
 
 # Create your views here.
@@ -120,6 +122,22 @@ class UserProfileView(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        
-        
+
+class ChangePasswordView(APIView):
+    permission_classes = [IsAuthenticated]
+    
+    def post(self, request):
+        serializer = ChangePasswordSerializer(data=request.data)
+        if serializer.is_valid():
+            current_password = serializer.validated_data['current_password']
+            new_password = serializer.validated_data['new_password']
+            
+            if request.user.check_password(current_password):
+                request.user.set_password(new_password)
+                request.user.save()
+                return Response('Password changed successfully', status=status.HTTP_200_OK)
+            else:
+                return Response('wrong password', status=status.HTTP_400_BAD_REQUEST)
+        else:
+                return Response('bad request', status=status.HTTP_400_BAD_REQUEST)
         
