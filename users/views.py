@@ -20,7 +20,7 @@ class RegisterView(APIView):
             serializer.save()
             return Response(
                 serializer.data, status=status.HTTP_201_CREATED
-                #returning status code 201 for successfull creation
+                #returning status code 201 for successfull creation and the data back
             )
         else:
             return Response(

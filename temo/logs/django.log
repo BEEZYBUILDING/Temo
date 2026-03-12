@@ -1,0 +1,23 @@
+WARNING 2026-03-12 07:00:18,158 log 18128 15536 Bad Request: /api/users/register/
+WARNING 2026-03-12 07:13:28,738 log 15724 8868 Unauthorized: /api/users/me/
+WARNING 2026-03-12 07:27:48,738 log 12716 4884 Unauthorized: /api/users/login/
+WARNING 2026-03-12 07:29:36,204 log 12716 10092 Bad Request: /api/users/token/refresh/
+WARNING 2026-03-12 07:30:08,211 log 12716 10092 Bad Request: /api/users/token/refresh/
+WARNING 2026-03-12 07:30:12,862 log 12716 10092 Bad Request: /api/users/token/refresh/
+WARNING 2026-03-12 07:30:49,987 log 12716 10092 Bad Request: /api/users/token/refresh/
+WARNING 2026-03-12 07:31:12,266 log 12716 10092 Unauthorized: /api/users/token/refresh/
+WARNING 2026-03-12 07:31:17,931 log 12716 10092 Bad Request: /api/users/token/refresh/
+WARNING 2026-03-12 07:36:50,981 log 12716 19488 Unauthorized: /api/users/logout/
+WARNING 2026-03-12 07:39:41,363 log 12716 10772 Unauthorized: /api/users/login/
+WARNING 2026-03-12 07:40:11,027 log 12716 10772 Unauthorized: /api/users/login/
+WARNING 2026-03-12 07:40:14,153 log 12716 10772 Unauthorized: /api/users/login/
+WARNING 2026-03-12 07:40:35,526 log 17752 17028 Unauthorized: /api/users/login/
+WARNING 2026-03-12 07:40:54,694 log 17752 17028 Unauthorized: /api/users/login/
+WARNING 2026-03-12 07:43:30,316 log 17752 15988 Unauthorized: /api/users/login/
+WARNING 2026-03-12 23:16:38,357 log 21888 17664 Unauthorized: /api/users/login/
+WARNING 2026-03-12 23:17:43,415 log 21888 5648 Unauthorized: /api/users/login/
+WARNING 2026-03-12 23:17:47,118 log 21888 5648 Unauthorized: /api/users/login/
+WARNING 2026-03-12 23:20:51,894 log 7544 18488 Unauthorized: /api/users/logout/
+WARNING 2026-03-12 23:28:15,055 log 17708 19488 Not Found: /api/token/refresh
+WARNING 2026-03-12 23:28:33,077 log 17708 19488 Not Found: /api/token/refresh/
+WARNING 2026-03-12 23:28:50,202 log 17708 19488 Unauthorized: /api/users/token/refresh/
