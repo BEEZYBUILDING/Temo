@@ -41,8 +41,19 @@ class ProductVariant(models.Model):
     sku = models.CharField(max_length=20, unique=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.IntegerField()
-    attributes = models.JSONField()
+    attributes = models.JSONField() # it allows  only the needed columns for each products so that there wont be unnesesarry columns
     is_active = models.BooleanField(default=True)
     
     def __str__(self):
         return f"{self.product.name} - {self.sku}"
+    
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, related_name='images', on_delete=models.CASCADE)
+    image_url = models.URLField()
+    alt_text = models.CharField(max_length=200, blank=True, null=True)
+    order = models.IntegerField(default=0)
+    is_primary = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return f"{self.product} - {self.image_url}"
+    
