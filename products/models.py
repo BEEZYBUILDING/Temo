@@ -28,10 +28,21 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
-    def save(self, *args, **kwargs):
+    def save(self, *args, **kwargs): #override the default save functo and create your own
         if not self.slug:
             self.slug = slugify(self.name)
-        super().save(*args, **kwargs)
+        super().save(*args, **kwargs) #super calls the main save sunction and uses it to save the slug
         
     def __str__(self):
         return self.name
+    
+class ProductVariant(models.Model):
+    product = models.ForeignKey(Product, related_name='variants', on_delete=models.CASCADE)
+    sku = models.CharField(max_length=20, unique=True)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    stock = models.IntegerField()
+    attributes = models.JSONField()
+    is_active = models.BooleanField(default=True)
+    
+    def __str__(self):
+        return f"{self.product.name} - {self.sku}"
