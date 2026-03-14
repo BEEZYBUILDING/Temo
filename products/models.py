@@ -33,6 +33,12 @@ class Product(models.Model):
             self.slug = slugify(self.name)
         super().save(*args, **kwargs) #super calls the main save sunction and uses it to save the slug
         
+    class Meta:
+        indexes = [
+            models.Index(fields=['name']),
+            models.Index(fields=['category']),
+        ]
+        
     def __str__(self):
         return self.name
     
@@ -43,6 +49,11 @@ class ProductVariant(models.Model):
     stock = models.IntegerField()
     attributes = models.JSONField() # it allows  only the needed columns for each products so that there wont be unnesesarry columns
     is_active = models.BooleanField(default=True)
+    
+    class Meta:
+        indexes = [ #allows you to filter abd search based on the field indexed
+            models.Index(fields=['sku'])
+        ]
     
     def __str__(self):
         return f"{self.product.name} - {self.sku}"
