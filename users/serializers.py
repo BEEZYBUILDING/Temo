@@ -2,8 +2,9 @@ from rest_framework import serializers
 from .models import CustomUser, Address
 
 class RegisterSerializer(serializers.ModelSerializer): #for creating users
+    #Modelserializer is for when building a serializer that closely maps to an existing django model
     password = serializers.CharField(write_only=True, min_length=8)
-        #write_only : field is accepted in the request but never returned in the response
+        #write_only : nh is accepted in the request but never returned in the response
     class Meta:
         model = CustomUser
         fields = ['email','password', 'full_name', 'phone_number']
@@ -21,6 +22,7 @@ class RegisterSerializer(serializers.ModelSerializer): #for creating users
         return user
         
 class LoginSerializer(serializers.Serializer):
+    #ordinary serializer ids for when handling data that does not correspond directly to a django model
     password = serializers.CharField(write_only=True, min_length=8)
     email = serializers.EmailField()
         
@@ -71,3 +73,10 @@ class ChangePasswordSerializer(serializers.Serializer):
     current_password = serializers.CharField(write_only=True)
     new_password = serializers.CharField(write_only=True)
     
+    
+    
+
+    """
+     the view's job is to receive the request and return a response. 
+     The serializer's job is to handle data validation and saving.
+    """
