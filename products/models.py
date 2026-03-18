@@ -1,3 +1,5 @@
+from django.contrib.postgres.indexes import GinIndex
+from django.contrib.postgres.search import SearchVectorField
 from django.db import models
 from django.utils.text import slugify
 from users.models import CustomUser
@@ -9,6 +11,7 @@ class Category(models.Model):
     description = models.TextField(max_length=100, null=True, blank=True)
     parent = models.ForeignKey('self', related_name='subcategories', null=True, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
+  
     
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -27,6 +30,7 @@ class Product(models.Model):
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    #search_vector = SearchVectorField(null=True, blank=True)
     
     def save(self, *args, **kwargs): #override the default save functo and create your own
         if not self.slug:
@@ -37,6 +41,7 @@ class Product(models.Model):
         indexes = [
             models.Index(fields=['name']),
             models.Index(fields=['category']),
+            #GinIndex(name='product_search_gin', fields=['name'], opclasses=['gin_trgm_ops'])
         ]
         
     def __str__(self):

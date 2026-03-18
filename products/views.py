@@ -1,4 +1,5 @@
 from django_filters.rest_framework import DjangoFilterBackend
+from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.filters import OrderingFilter
@@ -57,8 +58,17 @@ class ProductView(APIView):
         queryset = Product.objects.filter(is_active=True)
         filtered_queryset = ProductFilter(request.GET, queryset=queryset).qs
         
+        search_query = request.GET.get('search') #gets the word the user wants to search for
+        if search_query:
+            vector = SearchVector('name', weight='A') + SearchVector('description', weight='B') #sets parameter(A, B) to the weight
+            query = SearchQuery(search_query)#it searches for the word
+            filtered_queryset = filtered_queryset.annotate(rank=SearchRank(vector, query)).filter(rank__gte=0.1).order_by('-rank') # find the word adds wach word found and arrnages it by rank
+        
         serializer = ProductSerializer(filtered_queryset, many=True)
+        
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+        
     
 class VariantView(APIView):
     permission_classes = [IsAdmin]
