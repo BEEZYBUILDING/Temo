@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'payments',
     'notifications',
     'corsheaders',
+    'django_filters',
 ]
 
 MIDDLEWARE = [

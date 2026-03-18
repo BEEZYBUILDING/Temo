@@ -1,14 +1,25 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from django.shortcuts import render
 from rest_framework import status
+from rest_framework.filters import OrderingFilter
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from users.permissions import IsAdmin
+from .filters import ProductFilter
 from .models import Product, ProductVariant, ProductImage
 from .serializers import ProductSerializer, ProductVariantSerializer, ProductImageSerializer
 
 # Create your views here.
 class ProductView(APIView):
-    permission_classes = [IsAdmin]
+    #permission_classes = [IsAdmin]
+    filter_backends = [DjangoFilterBackend, OrderingFilter]
+    filterset_class = ProductFilter
+    ordering = ['-created_at'] #default
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [] #this means no permission required
+        return [IsAdmin()] #admin for everything else apart from the GET function
     
     def post(self, request):
         serializer = ProductSerializer(data=request.data)
@@ -42,7 +53,13 @@ class ProductView(APIView):
         except Product.DoesNotExist:
             return Response("product not found", status=status.HTTP_404_NOT_FOUND)
         
+    def get(self, request):
+        queryset = Product.objects.filter(is_active=True)
+        filtered_queryset = ProductFilter(request.GET, queryset=queryset).qs
         
+        serializer = ProductSerializer(filtered_queryset, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
 class VariantView(APIView):
     permission_classes = [IsAdmin]
     
