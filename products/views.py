@@ -1,5 +1,6 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
+from django.core.cache import cache
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.filters import OrderingFilter
@@ -41,6 +42,7 @@ class ProductView(APIView):
         
         if serializer.is_valid():
             serializer.save()
+            cache.delete(f'product_{pk}')
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -118,3 +120,22 @@ class ProductImageView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+class ProductDetailView(APIView):
+    #permission_classes = [IsAdmin]
+    
+    def get(self, request, pk):
+        product = cache.get(f'product_{pk}') # checks the cache first
+        
+        if product is not None: #if it's there it returns the response immediately
+            return Response(product, status=status.HTTP_200_OK)
+        else:
+            try:
+                product = Product.objects.get(id=pk) #fetch the requested data from the DB
+            except Product.DoesNotExist:
+                return Response("Product not found", status=status.HTTP_404_NOT_FOUND)
+            
+            serializer = ProductSerializer(product)
+            cache.set(f"product_{pk}", serializer.data, timeout=900) #stores the data in the cache (TTL - Time TO Live)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        
