@@ -232,3 +232,5 @@ CACHES = {
         }
     }
 }
+
+REDIS_URL = config('REDIS_URL')
