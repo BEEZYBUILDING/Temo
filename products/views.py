@@ -9,7 +9,12 @@ from rest_framework.views import APIView
 from users.permissions import IsAdmin
 from .filters import ProductFilter
 from .models import Product, ProductVariant, ProductImage
-from .serializers import ProductSerializer, ProductVariantSerializer, ProductImageSerializer
+from .serializers import (ProductSerializer, 
+                          ProductVariantSerializer, 
+                          ProductImageSerializer,
+                          ProductListSerializer,
+                          ProductDetailSerializer
+                        )                   
 
 # Create your views here.
 class ProductView(APIView):
@@ -66,7 +71,7 @@ class ProductView(APIView):
             query = SearchQuery(search_query)#it searches for the word
             filtered_queryset = filtered_queryset.annotate(rank=SearchRank(vector, query)).filter(rank__gte=0.1).order_by('-rank') # find the word adds wach word found and arrnages it by rank
         
-        serializer = ProductSerializer(filtered_queryset, many=True)
+        serializer = ProductListSerializer(filtered_queryset, many=True)
         
         return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -135,7 +140,7 @@ class ProductDetailView(APIView):
             except Product.DoesNotExist:
                 return Response("Product not found", status=status.HTTP_404_NOT_FOUND)
             
-            serializer = ProductSerializer(product)
+            serializer = ProductDetailSerializer(product)
             cache.set(f"product_{pk}", serializer.data, timeout=900) #stores the data in the cache (TTL - Time TO Live)
             return Response(serializer.data, status=status.HTTP_200_OK)
         
