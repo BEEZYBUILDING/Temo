@@ -56,7 +56,7 @@ class ProductVariant(models.Model):
     is_active = models.BooleanField(default=True)
     
     class Meta:
-        indexes = [ #allows you to filter abd search based on the field indexed
+        indexes = [ #allows you to filter and search based on the field indexed
             models.Index(fields=['sku'])
         ]
     
