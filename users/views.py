@@ -5,6 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from .models import Address
+from cart.services import CartService
 from .permissions import IsAdmin
 from .serializers import (RegisterSerializer, LoginSerializer, 
                           AddressSerializer, UserProfileSerializer,
@@ -39,9 +40,14 @@ class LoginView(APIView):
             user = authenticate(request, email=email, password=password)
             
             if user:
+                session_token = request.headers.get('X-Session-Token')
+                if session_token:
+                    CartService.merge_carts(user.id, session_token)
+            
                 refresh = CustomRefreshToken.for_user(user)
                 access = str(refresh.access_token)
                 refresh = str(refresh)
+                
                 return Response({
                     'access': access,
                     'refresh': refresh
