@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_filters',
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
@@ -53,7 +54,6 @@ INSTALLED_APPS = [
     'payments',
     'notifications',
     'corsheaders',
-    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -138,9 +138,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-REST_FRAMEWORK = {
-    "EXCEPTION_HANDLER": "core.exceptions.custom_exceptions_handler"
-}
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000"
@@ -219,7 +216,11 @@ SIMPLE_JWT = {
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),                                    
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
+    # 'EXCEPTION_HANDLER': 'core.exceptions.custom_exceptions_handler',
 }
 
 
@@ -233,4 +234,5 @@ CACHES = {
     }
 }
 
-REDIS_URL = config('REDIS_URL')
+# REDIS_URL = config('REDIS_URL')
+REDIS_URL = config('REDIS_URL', default='redis://127.0.0.1:6379/0')
