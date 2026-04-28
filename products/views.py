@@ -144,3 +144,10 @@ class ProductDetailView(APIView):
             cache.set(f"product_{pk}", serializer.data, timeout=900) #stores the data in the cache (TTL - Time TO Live)
             return Response(serializer.data, status=status.HTTP_200_OK)
         
+# In views.py
+def home_page(request):
+    return render(request, 'products/product_grid.html')
+
+# This view ONLY serves the HTML file
+def product_detail_page(request, pk):
+    return render(request, 'products/product_detail.html')

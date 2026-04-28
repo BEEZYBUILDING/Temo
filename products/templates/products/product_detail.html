@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <nav class="p-4 bg-white shadow-sm flex items-center justify-between">
+        <button onclick="history.back()" class="text-green-700 font-bold">← Back</button>
+        <div class="text-xl font-black text-green-600 italic">TEMO</div>
+        <div class="w-6"></div> </nav>
+
+    <div class="max-w-4xl mx-auto pb-20">
+        <div class="bg-white">
+            <img id="main-image" src="" alt="Product" class="w-full h-80 object-contain p-4">
+            <div id="image-thumbnails" class="flex gap-2 px-4 pb-4 overflow-x-auto">
+                </div>
+        </div>
+
+        <div class="p-4 bg-white mt-2">
+            <div class="flex items-center gap-2">
+                <span id="price" class="text-3xl font-bold text-green-700">$0.00</span>
+                <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">-60% OFF</span>
+            </div>
+            
+            <h1 id="product-name" class="text-lg font-semibold mt-2 text-gray-800">Loading...</h1>
+            
+            <div class="mt-2 flex items-center text-sm text-gray-500">
+                <span class="flex text-orange-400">★★★★★</span>
+                <span class="ml-2">(4.9) · 1.2k+ Sold</span>
+            </div>
+        </div>
+
+        <div class="p-4 bg-white mt-2">
+            <h3 class="font-bold text-sm mb-3 uppercase tracking-wider">Options</h3>
+            <div id="variant-container" class="flex flex-wrap gap-2">
+                </div>
+        </div>
+
+        <div class="p-4 bg-white mt-2">
+            <h3 class="font-bold text-sm mb-2">Description</h3>
+            <p id="description" class="text-gray-600 text-sm leading-relaxed">
+                Loading description...
+            </p>
+        </div>
+    </div>
+
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t p-4 flex gap-3">
+        <button class="flex-1 border-2 border-green-600 text-green-600 py-3 rounded-full font-bold">Add to Cart</button>
+        <button class="flex-[1.5] bg-green-600 text-white py-3 rounded-full font-bold shadow-lg shadow-green-200">Buy Now</button>
+    </div>
+
+    <script>
+        // 1. Get Product ID from URL (e.g., yourpage.com/product/5)
+        const productId = window.location.pathname.split('/').filter(Boolean).pop();
+
+        async function fetchProductDetails() {
+            try {
+                // Change this URL to match your Django server address
+                const response = await fetch(`http://127.0.0.1:8000/api/products/${productId}/`);
+                const data = await response.json();
+
+                // 2. Inject basic info
+                document.getElementById('product-name').innerText = data.name;
+                document.getElementById('description').innerText = data.description;
+                
+                // 3. Handle Images
+                if (data.images && data.images.length > 0) {
+                    document.getElementById('main-image').src = data.images[0].image_url;
+                    const thumbContainer = document.getElementById('image-thumbnails');
+                    data.images.forEach(img => {
+                        const thumb = document.createElement('img');
+                        thumb.src = img.image_url;
+                        thumb.className = "w-16 h-16 object-cover border rounded cursor-pointer";
+                        thumb.onclick = () => document.getElementById('main-image').src = img.image_url;
+                        thumbContainer.appendChild(thumb);
+                    });
+                }
+
+                // 4. Handle Variants and Prices
+                if (data.variants && data.variants.length > 0) {
+                    document.getElementById('price').innerText = `$${data.variants[0].price}`;
+                    const variantContainer = document.getElementById('variant-container');
+                    
+                    data.variants.forEach(v => {
+                        const btn = document.createElement('button');
+                        // v.attributes is your JSONField! (e.g., {"color": "Green"})
+                        btn.innerText = Object.values(v.attributes).join(' / ');
+                        btn.className = "px-4 py-2 border rounded-md text-sm hover:border-green-600 transition";
+                        btn.onclick = () => {
+                            document.getElementById('price').innerText = `$${v.price}`;
+                            // Remove active style from others, add to this one
+                        };
+                        variantContainer.appendChild(btn);
+                    });
+                }
+
+            } catch (error) {
+                console.error("Error fetching product:", error);
+            }
+        }
+
+        fetchProductDetails();
+    </script>
+</body>
+</html>

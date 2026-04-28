@@ -9,7 +9,7 @@ class Category(models.Model):
     name = models.CharField(max_length=30)
     slug = models.SlugField(unique=True)
     description = models.TextField(max_length=100, null=True, blank=True)
-    parent = models.ForeignKey('self', related_name='subcategories', null=True, on_delete=models.CASCADE)
+    parent = models.ForeignKey('self', related_name='subcategories', null=True, blank=True, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
   
     
@@ -18,6 +18,7 @@ class Category(models.Model):
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
         
+
     def __str__(self):
         return self.name
     
@@ -52,7 +53,7 @@ class ProductVariant(models.Model):
     sku = models.CharField(max_length=20, unique=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.IntegerField()
-    attributes = models.JSONField() # it allows  only the needed columns for each products so that there wont be unnesesarry columns
+    attributes = models.JSONField({"color": "green", "size": "M"}) # it allows  only the needed columns for each products so that there wont be unnesesarry columns
     is_active = models.BooleanField(default=True)
     
     class Meta:

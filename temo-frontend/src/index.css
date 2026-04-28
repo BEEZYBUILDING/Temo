@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #fafaf9;
+    color: #1c1917;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f5f5f4; }
+  ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-stone-900 text-stone-50 px-6 py-3 font-medium text-sm tracking-wide
+           hover:bg-stone-800 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply border border-stone-900 text-stone-900 px-6 py-3 font-medium text-sm tracking-wide
+           hover:bg-stone-900 hover:text-stone-50 transition-all duration-200;
+  }
+  .btn-accent {
+    @apply bg-amber-500 text-stone-900 px-6 py-3 font-medium text-sm tracking-wide
+           hover:bg-amber-600 transition-all duration-200;
+  }
+  .input-field {
+    @apply w-full border border-stone-200 bg-white px-4 py-3 text-sm text-stone-900
+           placeholder:text-stone-400 focus:outline-none focus:border-stone-900 transition-colors duration-200;
+  }
+  .card {
+    @apply bg-white border border-stone-100 shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+  .label {
+    @apply block text-xs font-medium text-stone-500 uppercase tracking-widest mb-2;
+  }
+}

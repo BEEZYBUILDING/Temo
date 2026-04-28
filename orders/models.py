@@ -12,7 +12,25 @@ class Order(models.Model):
         DELIVERED = "DELIVERED", "Delivered"
         CANCELLED = "CANCELLED", "Cancelled"
         REFUNDED = "REFUNDED", "Refunded"
-         
+        COMPLETED = 'COMPLETED', 'Completed'
+    
+    VALID_TRANSITIONS = {
+        'PENDING': ['CONFIRMED', 'CANCELLED'],
+        'CONFIRMED': ['PROCESSING', 'CANCELLED'],
+        'PROCESSING': ['SHIPPED','CANCELLED'],
+        'SHIPPED': ['DELIVERED'],
+        'DELIVERED': ['COMPLETED', 'REFUNDED'],
+        'COMPLETED': [],
+        'CANCELLED': [],
+        'REFUNDED': []
+    }
+
+    def transition_to(self, new_status):
+        if new_status not in self.VALID_TRANSITIONS.get(self.status, []):
+            raise ValueError(f'Cannot transition from {self.status} to {new_status}')
+        self.status = new_status
+        self.save()
+    
     user = models.ForeignKey(CustomUser, related_name='orders', on_delete=models.CASCADE)
     address = models.JSONField()
     status = models.CharField(max_length=15, choices=Status.choices, default=Status.PENDING)

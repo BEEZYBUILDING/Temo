@@ -21,3 +21,1315 @@ WARNING 2026-03-12 23:20:51,894 log 7544 18488 Unauthorized: /api/users/logout/
 WARNING 2026-03-12 23:28:15,055 log 17708 19488 Not Found: /api/token/refresh
 WARNING 2026-03-12 23:28:33,077 log 17708 19488 Not Found: /api/token/refresh/
 WARNING 2026-03-12 23:28:50,202 log 17708 19488 Unauthorized: /api/users/token/refresh/
+WARNING 2026-04-15 20:31:28,725 log 135217 133713043121728 Not Found: /
+WARNING 2026-04-15 20:31:28,751 log 135217 133713043121728 Not Found: /favicon.ico
+WARNING 2026-04-15 20:37:58,538 log 142592 132241811301952 Not Found: /
+WARNING 2026-04-15 20:38:00,681 log 142592 132241811301952 Not Found: /
+ERROR 2026-04-15 21:43:02,660 log 211888 127447279330880 Internal Server Error: /api/products/1/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ProductView.get() got an unexpected keyword argument 'pk'
+ERROR 2026-04-15 21:43:48,513 log 211888 127447279330880 Internal Server Error: /api/products/1/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ProductView.get() got an unexpected keyword argument 'pk'
+ERROR 2026-04-15 21:43:52,457 log 211888 127447279330880 Internal Server Error: /api/products/1/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ProductView.get() got an unexpected keyword argument 'pk'
+ERROR 2026-04-15 21:43:52,921 log 211888 127447279330880 Internal Server Error: /api/products/1/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ProductView.get() got an unexpected keyword argument 'pk'
+ERROR 2026-04-15 21:43:53,284 log 211888 127447279330880 Internal Server Error: /api/products/1/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ProductView.get() got an unexpected keyword argument 'pk'
+ERROR 2026-04-15 21:43:53,546 log 211888 127447279330880 Internal Server Error: /api/products/1/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ProductView.get() got an unexpected keyword argument 'pk'
+ERROR 2026-04-15 21:43:53,694 log 211888 127447279330880 Internal Server Error: /api/products/1/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ProductView.get() got an unexpected keyword argument 'pk'
+WARNING 2026-04-28 19:09:37,992 log 5786 129848054900288 Not Found: /favicon.ico
+ERROR 2026-04-28 19:10:21,297 log 5786 129848028673600 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 998, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1512, in _connect
+    raise err
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1496, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/views.py", line 14, in get
+    cart = CartService.get_cart(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/services.py", line 30, in get_cart
+    cart = redis_client.hgetall(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 5519, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:10:21,324 log 5786 129848028673600 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 998, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1512, in _connect
+    raise err
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1496, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/views.py", line 14, in get
+    cart = CartService.get_cart(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/services.py", line 30, in get_cart
+    cart = redis_client.hgetall(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 5519, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:12:31,188 log 6033 125600648914496 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 998, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1512, in _connect
+    raise err
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1496, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/views.py", line 14, in get
+    cart = CartService.get_cart(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/services.py", line 30, in get_cart
+    cart = redis_client.hgetall(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 5519, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:12:31,206 log 6033 125600648914496 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 998, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1512, in _connect
+    raise err
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1496, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/views.py", line 14, in get
+    cart = CartService.get_cart(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/services.py", line 30, in get_cart
+    cart = redis_client.hgetall(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 5519, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:12:32,511 log 6033 125600648914496 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 998, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1512, in _connect
+    raise err
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1496, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/views.py", line 14, in get
+    cart = CartService.get_cart(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/services.py", line 30, in get_cart
+    cart = redis_client.hgetall(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 5519, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:12:32,528 log 6033 125600648914496 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 998, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1512, in _connect
+    raise err
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1496, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/views.py", line 14, in get
+    cart = CartService.get_cart(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/services.py", line 30, in get_cart
+    cart = redis_client.hgetall(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 5519, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:12:44,902 log 6033 125600648914496 Internal Server Error: /api/products/1/detail/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/products/views.py", line 133, in get
+    product = cache.get(f'product_{pk}') # checks the cache first
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 2069, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:12:44,923 log 6033 125600648914496 Internal Server Error: /api/products/1/detail/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/products/views.py", line 133, in get
+    product = cache.get(f'product_{pk}') # checks the cache first
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 2069, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:12:50,148 log 6033 125600648914496 Internal Server Error: /api/products/1/detail/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/products/views.py", line 133, in get
+    product = cache.get(f'product_{pk}') # checks the cache first
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 2069, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:12:50,169 log 6033 125600648914496 Internal Server Error: /api/products/1/detail/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/products/views.py", line 133, in get
+    product = cache.get(f'product_{pk}') # checks the cache first
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 2069, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:13:31,980 log 6033 125600648914496 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 998, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1512, in _connect
+    raise err
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1496, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/views.py", line 14, in get
+    cart = CartService.get_cart(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/services.py", line 30, in get_cart
+    cart = redis_client.hgetall(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 5519, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:13:31,993 log 6033 125600648914496 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 998, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1512, in _connect
+    raise err
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1496, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/views.py", line 14, in get
+    cart = CartService.get_cart(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/services.py", line 30, in get_cart
+    cart = redis_client.hgetall(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 5519, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:13:42,265 log 6033 125600648914496 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 998, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1512, in _connect
+    raise err
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1496, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/views.py", line 14, in get
+    cart = CartService.get_cart(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/services.py", line 30, in get_cart
+    cart = redis_client.hgetall(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 5519, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:13:42,282 log 6033 125600648914496 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 998, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1512, in _connect
+    raise err
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1496, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/views.py", line 14, in get
+    cart = CartService.get_cart(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/services.py", line 30, in get_cart
+    cart = redis_client.hgetall(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 5519, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:13:59,023 log 6033 125600648914496 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 998, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1512, in _connect
+    raise err
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1496, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/views.py", line 14, in get
+    cart = CartService.get_cart(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/services.py", line 30, in get_cart
+    cart = redis_client.hgetall(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 5519, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-04-28 19:13:59,036 log 6033 125600648914496 Internal Server Error: /api/cart/
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 998, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1512, in _connect
+    raise err
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1496, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/views.py", line 14, in get
+    cart = CartService.get_cart(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/cart/services.py", line 30, in get_cart
+    cart = redis_client.hgetall(cart_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/commands/core.py", line 5519, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 2958, in get_connection
+    connection.connect()
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 132, in call_with_retry
+    raise error
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.

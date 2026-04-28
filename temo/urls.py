@@ -23,8 +23,10 @@ urlpatterns = [
     #path('healthcheck/', MainView.as_view(), name='health_check'),
     path('api/users/', include('users.urls')),
     path('api/cart/', include('cart.urls')),
-    path('api/products/', include('products.urls')),
+    #path('api/products/', include('products.urls')),
     path('api/orders/', include('orders.urls')),
     path('api/payments/', include('payments.urls')),
-    path('api/notifcations/', include('notifications.urls'))
+    path('api/notifcations/', include('notifications.urls')),
+
+    path('', include('products.urls')),
 ]
