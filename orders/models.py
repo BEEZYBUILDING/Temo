@@ -58,3 +58,23 @@ class OrderItem(models.Model):
     def __str__(self):
         return f"{self.id} - {self.order}"
     
+
+class Coupon(models.Model):
+    class Discount(models.TextChoices):
+        FLAT = 'FLAT', 'Flat'
+        PERCENTAGE = 'PERCENTAGE', 'Percentage'
+    code = models.CharField(max_length=20, unique=True)
+    discount_type = models.CharField(max_length=10, choices=Discount.choices)
+    discount_value = models.DecimalField(max_digits=10, decimal_places=2)
+    minimum_order_value = models.DecimalField(max_digits=100, decimal_places=2, blank=True, null=True)
+    expiry_date = models.DateTimeField()
+    max_uses = models.IntegerField(default=0)
+    current_uses = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+
+    def save(self, *args, **kwargs):
+        self.code = self.code.upper()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"Coupon {self.discount_value}"
