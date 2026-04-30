@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import models, transaction
 from products.models import ProductVariant
 from users.models import CustomUser
 
@@ -72,9 +72,32 @@ class Coupon(models.Model):
     current_uses = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
 
+    def is_valid(self, order_value):
+        if timezone.now() >= self.expiry_date:
+            raise ValueError(f'This coupon has expired')
+        if not self.is_active:
+            raise ValueError(f'Coupon is no longer active')
+        if self.current_uses >= self.max_uses:
+            raise ValueError(f'Coupon has reached the maximum number of uses')
+        if order_value < self.minimum_order_value:
+            raise ValueError(f'Minimum amount is {self.minimum_order_value}')
+        
+        return True
+
+    @staticmethod
+    def apply(code, order_value):
+        with transaction.atomic():
+            coupon = Coupon.objects.select_for_update().get(code=code)
+            coupon.is_valid(order_value)
+            coupon.current_uses += 1
+            coupon.save()
+            return coupon
+
     def save(self, *args, **kwargs):
         self.code = self.code.upper()
         super().save(*args, **kwargs)
 
     def __str__(self):
         return f"Coupon {self.discount_value}"
+
+    
