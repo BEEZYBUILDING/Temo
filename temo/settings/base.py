@@ -144,7 +144,12 @@ STATIC_URL = 'static/'
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "https://plaster-lantern-bovine.ngrok-free.dev", 
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://plaster-lantern-bovine.ngrok-free.dev",
 ]
 
 LOG_DIR = BASE_DIR / "logs"
