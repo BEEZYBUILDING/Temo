@@ -100,4 +100,14 @@ class Coupon(models.Model):
     def __str__(self):
         return f"Coupon {self.discount_value}"
 
-    
+
+class OrderStatusHistory(models.Model):
+    order = models.ForeignKey(Order, related_name='history', on_delete=models.CASCADE)
+    previous_status = models.CharField(max_length=20, blank=True, null=True)
+    new_status = models.CharField(max_length=20)
+    changed_by = models.ForeignKey(CustomUser, null=True, blank=True, on_delete=models.SET_NULL)
+    note = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.order}, {self.previous_status}-{self.new_status}"
