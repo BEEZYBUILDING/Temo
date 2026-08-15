@@ -9,7 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from users.models import Address
-from users.permissions import IsAdmin
+from users.permissions import IsAdmin, IsAuthenticated
 from .filters import OrderFilter
 from .models import Order, OrderItem, Coupon, OrderStatusHistory
 from .serializers import CheckoutSerializer, OrderListSerializer, OrderDetailSerializer
@@ -162,3 +162,35 @@ class AdminOrderStatusView(APIView):
         )
         serializer = OrderDetailSerializer(order)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class OrderCancelView(APIView):
+    permission_classes = [IsAuthenticated]
+    def post(self, request, pk):
+        try:
+            order = Order.objects.get(id=pk, user=request.user)
+
+        except Order.DoesNotExist:
+            return Response("Order does not exist", status=status.HTTP_404_NOT_FOUND)
+
+        if order.status not in ['PENDING', 'CONFIRMED']:
+            return Response(
+                "Order cannot be cancelled", status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        with transaction.atomic():
+            previous_status = order.status
+            order.transition_to('CANCELLED')
+
+            for item in order.items.all():
+                variant = ProductVariant.objects.select_for_update().get(id=item.variant.id)
+                variant.stock += item.quantity
+                variant.save()
+            OrderStatusHistory.objects.create(
+                order=order,
+                previous_status=previous_status,
+                new_status='CANCELLED',
+                changed_by=request.user,
+                note='Cancelled by user'
+            )
+        return Response(OrderDetailSerializer(order).data, status=status.HTTP_200_OK)
