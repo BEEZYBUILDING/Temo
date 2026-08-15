@@ -7,10 +7,12 @@ from products.models import ProductVariant
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_fraamework.views import APIView
+from rest_framework.views import APIView
 from users.models import Address
-from .models import Order, OrderItem, Coupon
-from .serializers import CheckoutSerializer
+from users.permissions import IsAdmin
+from .filters import OrderFilter
+from .models import Order, OrderItem, Coupon, OrderStatusHistory
+from .serializers import CheckoutSerializer, OrderListSerializer, OrderDetailSerializer
 
 # Create your views here.
 class CheckoutView(APIView):
@@ -111,3 +113,52 @@ class CheckoutView(APIView):
             )
         except ValueError as e:
             return Response(str(e), status=status.HTTP_400_BAD_REQUEST)
+
+class AdminOrderListView(APIView):
+    permission_classes = [IsAdmin]
+    def get(self, request):
+        queryset = Order.objects.all()
+        filtered_queryset = OrderFilter(request.GET, queryset=queryset).qs
+
+        serializer = OrderListSerializer(filtered_queryset, many=True)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+class AdminOrderDetailView(APIView):
+    permission_classes = [IsAdmin]
+    def get(self, request, pk):
+   
+        try:
+            order = Order.objects.get(id=pk)
+        except Order.DoesNotExist:
+            return Response("Order does not exist", status=status.HTTP_404_NOT_FOUND)
+        
+        serializer = OrderDetailSerializer(order)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+class AdminOrderStatusView(APIView):
+    permission_classes = [IsAdmin]
+
+    def put(self, request, pk):
+        try:
+            order = Order.objects.get(id=pk)
+        except Order.DoesNotExist:
+            return Response("Order does not exist", status=status.HTTP_404_NOT_FOUND)
+
+        new_status = request.data.get('new_status')
+        note = request.data.get('note')
+
+        try:
+            order.transition_to(new_status)
+        except ValueError as e:
+            return Response(str(e), status=status.HTTP_400_BAD_REQUEST)
+
+        OrderStatusHistory.objects.create(
+            order=order,
+            previous_status=order.status,  
+            new_status=new_status,
+            changed_by=request.user,
+            note=note
+        )
+        serializer = OrderDetailSerializer(order)
+        return Response(serializer.data, status=status.HTTP_200_OK)

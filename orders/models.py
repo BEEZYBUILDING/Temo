@@ -111,3 +111,4 @@ class OrderStatusHistory(models.Model):
 
     def __str__(self):
         return f"{self.order}, {self.previous_status}-{self.new_status}"
+
