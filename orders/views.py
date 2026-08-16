@@ -194,3 +194,15 @@ class OrderCancelView(APIView):
                 note='Cancelled by user'
             )
         return Response(OrderDetailSerializer(order).data, status=status.HTTP_200_OK)
+
+class OrderDetailView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, pk):
+        try:
+            order = Order.objects.get(id=pk, user=request.user)
+        except Order.DoesNotExist:
+            return Response("Order does not exist", status=status.HTTP_404_NOT_FOUND)
+
+        serializer = OrderDetailSerializer(order)
+        return Response(serializer.data, status=status.HTTP_200_OK)
