@@ -9,9 +9,10 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from users.models import Address
-from users.permissions import IsAdmin, IsAuthenticated
+from users.permissions import IsAdmin
 from .filters import OrderFilter
 from .models import Order, OrderItem, Coupon, OrderStatusHistory
+from .pagination import OrderPagination
 from .serializers import CheckoutSerializer, OrderListSerializer, OrderDetailSerializer
 
 # Create your views here.
@@ -115,14 +116,17 @@ class CheckoutView(APIView):
             return Response(str(e), status=status.HTTP_400_BAD_REQUEST)
 
 class AdminOrderListView(APIView):
+    
     permission_classes = [IsAdmin]
     def get(self, request):
         queryset = Order.objects.all()
         filtered_queryset = OrderFilter(request.GET, queryset=queryset).qs
 
-        serializer = OrderListSerializer(filtered_queryset, many=True)
+        paginator = OrderPagination()
+        page = paginator.paginate_queryset(filtered_queryset, request)
+        serializer = OrderListSerializer(page, many=True)
 
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return paginator.get_paginated_response(serializer.data)
 
 class AdminOrderDetailView(APIView):
     permission_classes = [IsAdmin]
@@ -206,3 +210,14 @@ class OrderDetailView(APIView):
 
         serializer = OrderDetailSerializer(order)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+class OrderListView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        queryset = Order.objects.filter(user=request.user).order_by('-created_at')
+        paginator = OrderPagination()
+        page = paginator.paginate_queryset(queryset, request)
+        serializer = OrderListSerializer(page, many=True)
+        
+        return paginator.get_paginated_response(serializer.data)
