@@ -133,7 +133,10 @@ class AdminOrderDetailView(APIView):
     def get(self, request, pk):
    
         try:
-            order = Order.objects.get(id=pk)
+            order = Order.objects.select_related('user').prefetch_related(
+                'items__variant__product',
+                'history'
+            ).get(id=pk)
         except Order.DoesNotExist:
             return Response("Order does not exist", status=status.HTTP_404_NOT_FOUND)
         
@@ -204,7 +207,10 @@ class OrderDetailView(APIView):
 
     def get(self, request, pk):
         try:
-            order = Order.objects.get(id=pk, user=request.user)
+            order = Order.objects.select_related('user').prefetch_related(
+                'items__variant__product',
+                'history'
+            ).get(id=pk, user=request.user)
         except Order.DoesNotExist:
             return Response("Order does not exist", status=status.HTTP_404_NOT_FOUND)
 
