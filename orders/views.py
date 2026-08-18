@@ -14,6 +14,7 @@ from .filters import OrderFilter
 from .models import Order, OrderItem, Coupon, OrderStatusHistory
 from .pagination import OrderPagination
 from .serializers import CheckoutSerializer, OrderListSerializer, OrderDetailSerializer
+from .services import update_order_status
 
 # Create your views here.
 class CheckoutView(APIView):
@@ -156,17 +157,10 @@ class AdminOrderStatusView(APIView):
         note = request.data.get('note')
 
         try:
-            order.transition_to(new_status)
+            update_order_status(order, new_status, changed_by=request.user, note=note)
         except ValueError as e:
             return Response(str(e), status=status.HTTP_400_BAD_REQUEST)
 
-        OrderStatusHistory.objects.create(
-            order=order,
-            previous_status=order.status,  
-            new_status=new_status,
-            changed_by=request.user,
-            note=note
-        )
         serializer = OrderDetailSerializer(order)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -186,20 +180,11 @@ class OrderCancelView(APIView):
             )
         
         with transaction.atomic():
-            previous_status = order.status
-            order.transition_to('CANCELLED')
-
             for item in order.items.all():
                 variant = ProductVariant.objects.select_for_update().get(id=item.variant.id)
                 variant.stock += item.quantity
                 variant.save()
-            OrderStatusHistory.objects.create(
-                order=order,
-                previous_status=previous_status,
-                new_status='CANCELLED',
-                changed_by=request.user,
-                note='Cancelled by user'
-            )
+            update_order_status(order, 'CANCELLED', changed_by=request.user, note='Cancelled by user')
         return Response(OrderDetailSerializer(order).data, status=status.HTTP_200_OK)
 
 class OrderDetailView(APIView):
