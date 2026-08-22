@@ -39,7 +39,7 @@ class Order(models.Model):
     discount_amount = models.DecimalField(max_digits=10, decimal_places=2)
     tax_amount = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     total = models.DecimalField(max_digits=10, decimal_places=2)
-    coupon = models.ForeignKey(Coupon, related_name='coupon', null=True, blank=True, on_delete=models.SET_NULL)
+    coupon = models.ForeignKey('Coupon', related_name='coupon', null=True, blank=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
