@@ -90,6 +90,7 @@ class StripeWebhookView(APIView):
         elif event_type == 'payment_intent.payment_failed':
             payment.status = 'FAILED'
             payment.save()
+            update_order_status(payment.order, 'PAYMENT_FAILED')
         
         return Response(status=status.HTTP_200_OK)
             

@@ -13,16 +13,18 @@ class Order(models.Model):
         CANCELLED = "CANCELLED", "Cancelled"
         REFUNDED = "REFUNDED", "Refunded"
         COMPLETED = 'COMPLETED', 'Completed'
+        PAYMENT_FAILED = "PAYMENT_FAILED", "Payment_Failed"
     
     VALID_TRANSITIONS = {
-        'PENDING': ['CONFIRMED', 'CANCELLED'],
+        'PENDING': ['CONFIRMED', 'CANCELLED', 'PAYMENT_FAILED'],
         'CONFIRMED': ['PROCESSING', 'CANCELLED'],
         'PROCESSING': ['SHIPPED','CANCELLED'],
         'SHIPPED': ['DELIVERED'],
         'DELIVERED': ['COMPLETED', 'REFUNDED'],
         'COMPLETED': [],
         'CANCELLED': [],
-        'REFUNDED': []
+        'REFUNDED': [],
+        'PAYMENT_FAILED': []
     }
 
     def transition_to(self, new_status):

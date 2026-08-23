@@ -165,7 +165,7 @@ class AdminOrderStatusView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-class OrderCsancelView(APIView):
+class OrderCancelView(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request, pk):
         try:
