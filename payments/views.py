@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from orders.models import Order
+from orders.services import update_order_status
 from .models import Payment
 from .serializers import CreatePaymentIntentSerializer
 
@@ -49,3 +50,46 @@ class CreatePaymentIntentView(APIView):
         return Response({
             'client_secret': intent.client_secret
         }, status=status.HTTP_201_CREATED)
+
+class StripeWebhookView(APIView):
+    authentication_classes = []
+    permission_classes = []
+    
+    def post(self, request):
+        payload = request.body
+        sig_header = request.META.get('HTTP_STRIPE_SIGNATURE')
+        
+        try:
+            event = stripe.Webhook.construct_event(
+                payload, sig_header, settings.STRIPE_WEBHOOK_SECRET
+            )
+        except stripe.error.SignatureVerificationError:
+            return Response('Invalid signature', status=status.HTTP_400_BAD_REQUEST)
+        
+        # get event type and payment intent
+        event_type = event['type']
+        payment_intent = event['data']['object']
+        payment_intent_id = payment_intent['id']
+        
+        # look up payment record
+        try:
+            payment = Payment.objects.get(stripe_payment_intent_id=payment_intent_id)
+        except Payment.DoesNotExist:
+            return Response(status=status.HTTP_200_OK)
+                    # idempotency check
+        if payment.status != 'PENDING':
+            return Response(status=status.HTTP_200_OK)
+        
+        # handle payment succeeded
+        if event_type == 'payment_intent.succeeded':
+            payment.status = 'SUCCEEDED'
+            payment.save()
+            update_order_status(payment.order, 'CONFIRMED')
+        
+        # handle payment failed
+        elif event_type == 'payment_intent.payment_failed':
+            payment.status = 'FAILED'
+            payment.save()
+        
+        return Response(status=status.HTTP_200_OK)
+            
