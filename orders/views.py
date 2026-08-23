@@ -3,6 +3,7 @@ from cart.utils import get_cart_key
 from decimal import Decimal
 from django.shortcuts import render
 from django.db import transaction
+from payments.services import create_payment_intent
 from products.models import ProductVariant
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
@@ -105,12 +106,13 @@ class CheckoutView(APIView):
                     coupon.save()
 
             CartService.clear_cart(cart_key)
-            
+            client_secret = create_payment_intent(order)
             return Response(
                 {
                     'order_id': order.id,
                     'status': order.status,
-                    'total': str(order.total)
+                    'total': str(order.total),
+                    'client_secret': client_secret
                 }, status=status.HTTP_201_CREATED
             )
         except ValueError as e:
