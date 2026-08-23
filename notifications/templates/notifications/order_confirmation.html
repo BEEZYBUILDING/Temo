@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Order Confirmation</h2>
+    <p>Thank you for your order!</p>
+    
+    <h3>Order #{{ order.id }}</h3>
+    <p>Status: {{ order.status }}</p>
+    
+    <h3>Items Ordered</h3>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Line Total</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.product_name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{ item.unit_price }}</td>
+            <td>${{ item.line_total }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <h3>Order Summary</h3>
+    <p>Subtotal: ${{ order.subtotal }}</p>
+    <p>Shipping: ${{ order.shipping_cost }}</p>
+    <p>Tax: ${{ order.tax_amount }}</p>
+    <p><strong>Total: ${{ order.total }}</strong></p>
+    
+    <h3>Shipping Address</h3>
+    <p>{{ address.full_name }}</p>
+    <p>{{ address.street }}</p>
+    <p>{{ address.city }}, {{ address.state }}</p>
+    <p>{{ address.country }} {{ address.postal_code }}</p>
+</body>
+</html>
