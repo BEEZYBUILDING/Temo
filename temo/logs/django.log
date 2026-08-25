@@ -1333,3 +1333,14 @@ Traceback (most recent call last):
   File "/home/olajire/Temo/temo/lib/python3.12/site-packages/redis/connection.py", line 1022, in connect_check_health
     raise e
 redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+INFO 2026-08-25 09:58:44,827 tasks 119209 126576579239936 Starting order confirmation email for order 1
+ERROR 2026-08-25 09:58:55,441 tasks 119209 126576579239936 Failed to send email for order 1: Resend API response 401 (Unauthorized):
+{
+  "statusCode": 401,
+  "name": "validation_error",
+  "message": "API key is invalid"
+}
+INFO 2026-08-25 10:00:22,515 tasks 119337 137311634477056 Starting order confirmation email for order 1
+INFO 2026-08-25 10:00:28,382 tasks 119337 137311634477056 Email sent successfully for order 1
+INFO 2026-08-25 10:00:41,068 tasks 119337 137311634477056 Starting order confirmation email for order 1
+INFO 2026-08-25 10:00:41,796 tasks 119337 137311634477056 Email sent successfully for order 1
