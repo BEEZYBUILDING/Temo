@@ -5,6 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
+from notifications.tasks import send_order_confirmation_email
 from orders.models import Order
 from orders.services import update_order_status
 from .models import Payment
@@ -85,6 +86,7 @@ class StripeWebhookView(APIView):
             payment.status = 'SUCCEEDED'
             payment.save()
             update_order_status(payment.order, 'CONFIRMED')
+            send_order_confirmation_email.delay(payment.order.id)
         
         # handle payment failed
         elif event_type == 'payment_intent.payment_failed':

@@ -19,7 +19,7 @@ def send_order_confirmation_email(order_id):
             subject=f'Order #{order.id} Confirmation',
             message='',
             from_email=None,  # uses DEFAULT_FROM_EMAIL
-            recipient_list=[order.user.email],
+            recipient_list=['delivered@resend.dev'],
             html_message=html_content,
         )
     except Exception as exc:

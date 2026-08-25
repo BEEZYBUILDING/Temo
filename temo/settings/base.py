@@ -264,4 +264,4 @@ EMAIL_BACKEND = 'anymail.backends.resend.EmailBackend'
 ANYMAIL = {
     'RESEND_API_KEY': config('RESEND_API_KEY'),
 }
-DEFAULT_FROM_EMAIL = 'your@email.com'
+DEFAULT_FROM_EMAIL = 'onboarding@resend.dev'
