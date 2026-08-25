@@ -2,9 +2,13 @@ from celery import shared_task
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from orders.models import Order
+import logging
+
+logger = logging.getLogger('mystore')
 
 @shared_task(max_retries=3, default_retry_delay=60)
 def send_order_confirmation_email(order_id):
+    logger.info(f'Starting order confirmation email for order {order_id}')
     # fetch order from DB
     try:
         order = Order.objects.prefetch_related('items').get(id=order_id)
@@ -22,5 +26,7 @@ def send_order_confirmation_email(order_id):
             recipient_list=['delivered@resend.dev'],
             html_message=html_content,
         )
+        logger.info(f'Email sent successfully for order {order_id}')
     except Exception as exc:
+        logger.error(f'Failed to send email for order {order_id}: {exc}')
         raise send_order_confirmation_email.retry(exc=exc, countdown=60)
