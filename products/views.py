@@ -1,5 +1,5 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
+from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector, TrigramSimilarity
 from django.core.cache import cache
 from django.shortcuts import render
 from rest_framework import status
@@ -69,7 +69,12 @@ class ProductView(APIView):
         if search_query:
             vector = SearchVector('name', weight='A') + SearchVector('description', weight='B') #sets parameter(A, B) to the weight
             query = SearchQuery(search_query)#it searches for the word
-            filtered_queryset = filtered_queryset.annotate(rank=SearchRank(vector, query)).filter(rank__gte=0.1).order_by('-rank') # find the word adds wach word found and arrnages it by rank
+            filtered_queryset = filtered_queryset.annotate(
+                rank=SearchRank(vector, query),
+                similarity=TrigramSimilarity('name', search_query)
+                ).filter(
+                    rank__gte=0.1
+                ).order_by('-similarity', '-rank') # find the word adds wach word found and arrnages it by rank
         
         serializer = ProductListSerializer(filtered_queryset, many=True)
         
