@@ -2,12 +2,16 @@ from rest_framework import serializers
 from .models import Review
 
 class ReviewSerializer(serializers.ModelSerializer):
+    user = serializers.SerializerMethodField()
+
     class Meta:
         model = Review
         fields = [
             'id', 'user', 'rating', 'title', 'body', 'created_at'
         ]
-
+ 
+    def get_user(self, obj):
+        return obj.user.full_name
 
 class CreateReviewSerializer(serializers.Serializer):
     rating = serializers.IntegerField()
