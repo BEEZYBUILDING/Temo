@@ -31,6 +31,8 @@ class Product(models.Model):
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    average_rating = models.DecimalField(max_digits=3, decimal_places=2, default=0)
+    review_count = models.IntegerField(default=0)
     #search_vector = SearchVectorField(null=True, blank=True)
     
     def save(self, *args, **kwargs): #override the default save functo and create your own
