@@ -67,7 +67,7 @@ class ProductView(APIView):
         
         search_query = request.GET.get('search') #gets the word the user wants to search for
         if search_query:
-            vector = SearchVector('name', weight='A') + SearchVector('description', weight='B') #sets parameter(A, B) to the weight
+            vector = SearchVector('name', weight='A') + SearchVector('description', weight='C') #sets parameter(A, B) to the weight
             query = SearchQuery(search_query)#it searches for the word
             filtered_queryset = filtered_queryset.annotate(
                 rank=SearchRank(vector, query),
