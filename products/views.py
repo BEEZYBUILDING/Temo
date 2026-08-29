@@ -148,6 +148,32 @@ class ProductDetailView(APIView):
             serializer = ProductDetailSerializer(product)
             cache.set(f"product_{pk}", serializer.data, timeout=900) #stores the data in the cache (TTL - Time TO Live)
             return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class ProductAutocompleteView(APIView):
+    def get(self, request):
+        query = request.GET.get('q', '')
+        
+        if len(query) < 2:
+            return Response([], status=status.HTTP_200_OK)
+        
+        # check cache first
+        cache_key = f'autocomplete:{query}'
+        cached = cache.get(cache_key)
+        if cached is not None:
+            return Response(cached, status=status.HTTP_200_OK)
+        
+        # fetch from DB
+        results = list(Product.objects.filter(
+            name__istartswith=query,
+            is_active=True
+        ).values_list('name', flat=True)[:10])
+
+        # cache results
+        cache.set(cache_key, results, timeout=300)  # 5 minutes
+
+        # return results
+        return Response(results, status=status.HTTP_200_OK)
         
 # In views.py
 def home_page(request):
