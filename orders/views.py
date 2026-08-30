@@ -271,8 +271,10 @@ class CouponValidateView(APIView):
         try:
             coupon.is_valid(Decimal(order_subtotal))
         except ValueError as e:
-            return Response({'valid': False, 'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
-
+            error_message = str(e)
+            if 'active' in error_message.lower():
+                return Response('Invalid coupon code', status=status.HTTP_404_NOT_FOUND)
+            return Response({'valid': False, 'error': error_message}, status=status.HTTP_400_BAD_REQUEST)
         # calculate discount
         if coupon.discount_type == 'FLAT':
             discount_amount = coupon.discount_value
