@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Order, OrderItem, OrderStatusHistory
+from .models import Coupon, Order, OrderItem, OrderStatusHistory
 
 class CheckoutSerializer(serializers.Serializer):
     address_id = serializers.IntegerField()
@@ -39,3 +39,16 @@ class OrderDetailSerializer(serializers.ModelSerializer):
             'tax_amount', 'discount_amount','total', 'created_at', 
             'updated_at', 'items', 'history'
         ]
+
+class CouponSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Coupon
+        fields = [
+            'code', 'discount_type', 'discount_value', 'minimum_order_value',
+            'expiry_date', 'max_uses', 'is_active'
+        ]
+    
+    def validate(self, data):
+        if data['discount_type'] == 'PERCENTAGE' and data['discount_value'] > 100:
+            raise serializers.ValidationError('Percentage discount cannot exceed 100%')
+        return data

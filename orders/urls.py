@@ -9,4 +9,6 @@ urlpatterns = [
    path('<int:pk>/cancel/', views.OrderCancelView.as_view(), name='cancel'),
    path('my/<int:pk>/', views.OrderDetailView.as_view(), name='my-order-detail'),
    path('my/', views.OrderListView.as_view(), name='my-orders'),
+   path('coupons/', views.AdminCouponListCreateView.as_view(), name='coupon-list-create'),
+   path('coupons/<int:pk>/', views.AdminCouponUpdateDeleteView.as_view(), name='coupon-update-delete'),
 ]

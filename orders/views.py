@@ -214,3 +214,45 @@ class OrderListView(APIView):
         serializer = OrderListSerializer(page, many=True)
         
         return paginator.get_paginated_response(serializer.data)
+
+class AdminCouponListCreateView(APIView):
+    permission_classes = [IsAdmin]
+
+    def get(self, request):
+        queryset = Coupon.objects.all()
+        serializer = CouponSerializer(queryset, many=True)
+        
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request):
+        serializer = CouponSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class AdminCouponUpdateDeleteView(APIView):
+    permission_classes = [IsAdmin]
+
+    def put(self, request, pk):
+        try:
+            coupon = Coupon.objects.get(id=pk)
+        except Coupon.DoesNotExist:
+            return Response('Coupon not found', status=status.HTTP_404_NOT_FOUND)
+        
+        serializer = CouponSerializer(coupon, data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, pk):
+        try:
+            coupon = Coupon.objects.get(id=pk)
+        except Coupon.DoesNotExist:
+            return Response('Coupon not found', status=status.HTTP_404_NOT_FOUND)
+        
+        coupon.is_active = False
+        coupon.save()
+        return Response('Coupon deactivated', status=status.HTTP_200_OK)
