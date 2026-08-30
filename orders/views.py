@@ -256,3 +256,31 @@ class AdminCouponUpdateDeleteView(APIView):
         coupon.is_active = False
         coupon.save()
         return Response('Coupon deactivated', status=status.HTTP_200_OK)
+
+class CouponCheckView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        code = request.data.get('code')
+        order_subtotal = request.data.get('order_subtotal')
+        try:
+            coupon = Coupon.objects.get(code=code.upper())
+        except Coupon.DoesNotExist:
+            return Response('Invalid coupon code', status=status.HTTP_404_NOT_FOUND)
+
+        try:
+            coupon.is_valid(Decimal(order_subtotal))
+        except ValueError as e:
+            return Response({'valid': False, 'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+        # calculate discount
+        if coupon.discount_type == 'FLAT':
+            discount_amount = coupon.discount_value
+        elif coupon.discount_type == 'PERCENTAGE':
+            discount_amount = Decimal(order_subtotal) * (coupon.discount_value / 100)
+
+        return Response({
+            'valid': True,
+            'discount_amount': str(discount_amount),
+            'code': coupon.code
+        }, status=status.HTTP_200_OK)

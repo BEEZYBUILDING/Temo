@@ -10,5 +10,6 @@ urlpatterns = [
    path('my/<int:pk>/', views.OrderDetailView.as_view(), name='my-order-detail'),
    path('my/', views.OrderListView.as_view(), name='my-orders'),
    path('coupons/', views.AdminCouponListCreateView.as_view(), name='coupon-list-create'),
+   path('coupons/validate/', views.CouponCheckView.as_view(), name='coupon-validate'),
    path('coupons/<int:pk>/', views.AdminCouponUpdateDeleteView.as_view(), name='coupon-update-delete'),
 ]
