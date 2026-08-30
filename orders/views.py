@@ -61,7 +61,7 @@ class CheckoutView(APIView):
 
         if coupon_code:
             try:
-                coupon = Coupon.objects.get(code=coupon_code.upper())
+                coupon = Coupon.objects.get(code=coupon_code.strip().upper())
                 coupon.is_valid(subtotal)
 
                 if coupon.discount_type == 'FLAT':
@@ -257,14 +257,14 @@ class AdminCouponUpdateDeleteView(APIView):
         coupon.save()
         return Response('Coupon deactivated', status=status.HTTP_200_OK)
 
-class CouponCheckView(APIView):
+class CouponValidateView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
         code = request.data.get('code')
         order_subtotal = request.data.get('order_subtotal')
         try:
-            coupon = Coupon.objects.get(code=code.upper())
+            coupon = Coupon.objects.get(code=code.strip().upper())
         except Coupon.DoesNotExist:
             return Response('Invalid coupon code', status=status.HTTP_404_NOT_FOUND)
 
