@@ -4,6 +4,7 @@ from core.rate_limit import is_rate_limited
 from decimal import Decimal
 from django.shortcuts import render
 from django.db import transaction
+from drf_spectacular.utils import extend_schema
 from payments.services import create_payment_intent
 from products.models import ProductVariant
 from rest_framework import status
@@ -19,6 +20,10 @@ from .serializers import CheckoutSerializer, OrderListSerializer, OrderDetailSer
 from .services import update_order_status
 
 # Create your views here.
+@extend_schema(
+    description='Creates an order from the cart and returns a Stripe client_secret for payment',
+    responses={201: {'order_id': 'int', 'status': 'str', 'total': 'str', 'client_secret': 'str'}}
+)
 class CheckoutView(APIView):
     permission_classes = [IsAuthenticated]
 

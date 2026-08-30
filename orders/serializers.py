@@ -2,8 +2,8 @@ from rest_framework import serializers
 from .models import Coupon, Order, OrderItem, OrderStatusHistory
 
 class CheckoutSerializer(serializers.Serializer):
-    address_id = serializers.IntegerField()
-    coupon_code = serializers.CharField(required=False, allow_blank=True)
+    address_id = serializers.IntegerField(help_text='ID of the delivery address')
+    coupon_code = serializers.CharField(required=False, allow_blank=True, help_text='Optional coupon code')
 
 class OrderListSerializer(serializers.ModelSerializer):
     class Meta:

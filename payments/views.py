@@ -1,6 +1,7 @@
 import stripe
 from django.conf import settings
 from django.shortcuts import render
+from drf_spectacular.utils import extend_schema
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
@@ -52,6 +53,7 @@ class CreatePaymentIntentView(APIView):
             'client_secret': intent.client_secret
         }, status=status.HTTP_201_CREATED)
 
+@extend_schema(exclude=True)
 class StripeWebhookView(APIView):
     authentication_classes = []
     permission_classes = []
