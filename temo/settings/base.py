@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'django_celery_beat',
     'axes',
+    'drf_spectacular',
     #'health_check',
    
     #apps 
@@ -236,6 +237,8 @@ REST_FRAMEWORK = {
     
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
+        'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+
     # 'EXCEPTION_HANDLER': 'core.exceptions.custom_exceptions_handler',
 }
 
@@ -276,3 +279,9 @@ AUTHENTICATION_BACKENDS = [
 
 AXES_FAILURE_LIMIT = 5
 AXES_COOLOFF_TIME = 1  # 1 hour lockout
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Temo API',
+    'DESCRIPTION': 'E-commerce API built with Django REST Framework',
+    'VERSION': '1.0.0',
+}
