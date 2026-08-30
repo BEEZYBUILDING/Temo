@@ -1,5 +1,6 @@
 from cart.services import CartService
 from cart.utils import get_cart_key
+from core.rate_limit import is_rate_limited
 from decimal import Decimal
 from django.shortcuts import render
 from django.db import transaction
@@ -22,6 +23,9 @@ class CheckoutView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
+        rate_key = f'rate_limit:checkout:{request.user.id}'
+        if is_rate_limited(rate_key, max_requests=3, window_seconds=60):
+            return Response('Too many checkout attempts. Try again later.', status=status.HTTP_429_TOO_MANY_REQUESTS)
         serializer = CheckoutSerializer(data=request.data)
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 

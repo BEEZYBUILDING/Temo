@@ -1,3 +1,4 @@
+from core.rate_limit import is_rate_limited
 from django.contrib.auth import authenticate
 from rest_framework import status
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -32,6 +33,9 @@ class RegisterView(APIView):
 class LoginView(APIView):
     permission_classes = [AllowAny]
     def post(self, request):
+        rate_key = f'rate_limit:login:{request.META.get("REMOTE_ADDR")}'
+        if is_rate_limited(rate_key, max_requests=5, window_seconds=60):
+            return Response('Too many login attempts. Try again later.', status=status.HTTP_429_TOO_MANY_REQUESTS)
         serializer = LoginSerializer(data=request.data)
         
         if serializer.is_valid():
