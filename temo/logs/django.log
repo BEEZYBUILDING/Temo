@@ -1344,3 +1344,5 @@ INFO 2026-08-25 10:00:22,515 tasks 119337 137311634477056 Starting order confirm
 INFO 2026-08-25 10:00:28,382 tasks 119337 137311634477056 Email sent successfully for order 1
 INFO 2026-08-25 10:00:41,068 tasks 119337 137311634477056 Starting order confirmation email for order 1
 INFO 2026-08-25 10:00:41,796 tasks 119337 137311634477056 Email sent successfully for order 1
+WARNING 2026-08-30 19:39:16,829 log 80501 135641696474688 Unauthorized: /api/users/me/
+WARNING 2026-08-30 19:40:06,148 log 80501 135641696474688 Unauthorized: /api/users/me/
