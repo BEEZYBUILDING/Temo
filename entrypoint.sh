@@ -25,4 +25,4 @@ echo "Running migrations..."
 python manage.py migrate
 
 echo "Starting service..."
-exec "$@"
+exec gunicorn temo.wsgi:application --bind 0.0.0.0:${PORT:-8000} --workers 4
