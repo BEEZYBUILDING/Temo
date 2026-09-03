@@ -26,7 +26,7 @@ services:
     build: .
     command: gunicorn temo.wsgi:application --bind 0.0.0.0:8000 --workers 4
     ports:
-      - "8000:8000"
+      - "8000:8080"
     env_file:
       - .env
     depends_on:
